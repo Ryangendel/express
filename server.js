@@ -76,6 +76,15 @@ app.post("/addpup", async function(req, res){
   res.send(insertedData)
 })
 
+app.get('/dogsinvent', async (req, res) => {
+    try {
+      const users = await Dog.find({});
+      res.json(users);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to fetch users' });
+    }
+  });
+
 // app.post("/addpup/:favfood", async function(req, res){
 //       console.log(req.body)
 //    // const { insertedId } =  await dogsCollection.insertOne({ dogName: 'Runa', age: 2 })
