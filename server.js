@@ -58,7 +58,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, "frontend", 'index.html'));
 })
 
 app.post("/addpup", async function(req, res){
